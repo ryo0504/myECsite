@@ -49,10 +49,15 @@
                                 <div class="widget-header icontext">
                                     <div class="icon-wrap icon-sm bg2 round text-secondary"><i class="fa fa-user"></i></div>
                                     <div class="text-wrap">
+                                        {% if user.is_authenticated %}
+                                        <small>{{user.name}}さん</small>
+                                        <span><a href="{% url 'amazon:logout' %}">Logout</a></span>
+                                        {% else %}
                                         <small>ゲスト</small>
+                                        <span><a href="{% url 'amazon:login' %}">Login</a></span>
+                                        {% endif %}
                                     </div>
-                                </div> <!-- widget  dropdown.// -->
-                            </div>	<!-- widgets-wrap.// -->	
+                                </div>	<!-- widgets-wrap.// -->	
                         </div> <!-- col.// -->
                     </div> <!-- row.// -->
                 </div> <!-- container.// -->
