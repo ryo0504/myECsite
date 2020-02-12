@@ -11,4 +11,18 @@ class LoginForm(AuthenticationForm):
         for field in self.fields.values():
             field.widget.attrs['class'] = 'form-control'
             field.widget.attrs['placeholder'] = field.label  # placeholderにフィールドのラベルを入れる
-# [5-2] ログインフォームここまで
+
+
+class SignUpForm(UserCreationForm):
+    """ユーザー登録用フォーム"""
+
+    class Meta:
+        model = User
+        fields = ('email', 'name',)
+        
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields.values():
+            field.widget.attrs['class'] = 'form-control'
+            field.widget.attrs['placeholder'] = field.label
+            

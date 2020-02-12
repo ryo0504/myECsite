@@ -128,3 +128,5 @@ MEDIA_URL = '/media_techpit/' # 追加
 LOGIN_URL = 'amazon:login'
 LOGIN_REDIRECT_URL = 'amazon:lp'
 LOGOUT_REDIRECT_URL = 'amazon:lp'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
